@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to AutoBuddy!</title>
+</head>
+<body>
+
+<div id = 'header&form' style="text-align: center;">
+    <h2>Car Form</h2>
+    <form method="post" id="modelForm" data-models-url="{% url 'ajax_load_models' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $("#id_make").change(function () {
+        const url = $("#modelForm").attr("data-models-url");  // get the url of the `load_cities` view
+        const makeId = $(this).val();  // get the selected country ID from the HTML input
+        $.ajax({    
+                               // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'make_id': makeId       // add the country id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#id_model").html(data);  // replace the contents of the city input with the data that came from the server
+                for (let i = 0; i < data.models.length; i++) {
+                    var option = $('<option/>');
+                    option.attr({ 'value': data.models[i].id }).text(data.models[i].name);
+                    $('#id_model').append(option);
+                }
+                /*
+                let html_data = '<option value="">---------</option>';
+                data.forEach(function (city) {
+                    html_data += `<option value="${city.id}">${city.name}</option>`
+                });
+                console.log(html_data);
+                $("#id_city").html(html_data);
+                */
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>
