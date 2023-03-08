@@ -20,6 +20,6 @@ class Car(models.Model):
     year = models.CharField(max_length=124)
     make = models.ForeignKey(Make, on_delete=models.SET_NULL, blank=True, null=True)
     model = models.ForeignKey(Model, on_delete=models.SET_NULL, blank=True, null=True)
-
+    
     def __str__(self):
         return self.year + " " + str(self.make) + " " + str(self.model)

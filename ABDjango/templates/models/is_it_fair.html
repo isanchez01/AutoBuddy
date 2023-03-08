@@ -1,0 +1,94 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <link rel="stylesheet" href="{% static 'css/edits.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Is It Fair?</title>
+
+</head>
+
+<body style="background-color: rgb(252, 20, 20);">
+    <div id = "about">
+        <h1 style="font-family: neuton; color: white; text-align: center;">Is It Fair? Estimator Tool</h1>
+    
+        <p style='font-family: neuton; color: white; line-height: 1.8; margin-left: 120px; margin-right: 120px; font-size: 20px; margin-top: 100px;'>
+           Welcome to the Is It Fair? estimator tool. Here, you can check to see whether the price you got from the shop is
+           reasonable, too much, or even if it's a good deal! The Is It Fair? tool works the same way as the Autobuddy Estimator.
+           Just select the year, make, and model of your car, along with the repairs that are needed. Once the information is
+           submitted, a spectrum will appear that will tell the user whether they're overpaying, underpaying, or paying the average
+           price for their repairs. The spectrum will do this by showing you one of four colors: Very Green, Green, Yellow, and Red. 
+       </p>
+
+        <p style='font-family: neuton; color: white; line-height: 1.8; margin-left: 120px; margin-right: 120px; font-size: 20px; margin-top: 100px;'>
+            The spectrum will do this by showing you one of four colors: Very Green, Green, Yellow, and Red. Very Green means 
+            that the quote for your repair(s) is significantly below the average price that AutoBuddy calculated. In other words,
+            you are getting quite the deal from your mechanic!
+        </p>
+
+        <p style='font-family: neuton; color: white; line-height: 1.8; margin-left: 120px; margin-right: 120px; font-size: 20px; margin-top: 100px;'>
+            If you see a lighter shade of Green, that means that your auto repair quote is slightly more expensive than it would've
+            been if it had brought the spectrum to Very Green, but it is still below AutoBuddy's average so it is still a good
+            deal! You might not have struck gold in the auto repair world, but at least you're not gettting swindled by a high
+            auto repair bill!
+        </p>
+
+        <p style='font-family: neuton; color: white; line-height: 1.8; margin-left: 120px; margin-right: 120px; font-size: 20px; margin-top: 100px;'>
+            If yellow is returned, then that means that you are either paying the average price calculated by AutoBuddy, or paying 
+            slightly above it. Although it is certainly possible to search around for a lower price, finding yourself in the yellow
+            region doesn't automatically mean that you're getting swindled. 
+        </p>
+        
+        <p style='font-family: neuton; color: white; line-height: 1.8; margin-left: 120px; margin-right: 120px; font-size: 20px; margin-top: 100px;'>
+            If you find yourself in the Red, that means that you are pretty much getting swindled relative to the AutoBuddy average.
+            Your quote is significantly above the AutoBuddy average and you should probably try to find another mechanic that will
+            charge you a cheaper and more reasonable price. 
+        </p>
+    </div>
+    <div id = 'header&form' style="text-align: center;">
+        <h2>Car Form</h2>
+        <form method="post" id="modelForm" data-models-url="{% url 'ajax_load_models' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+     
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $("#id_make").change(function () {
+            const url = $("#modelForm").attr("data-models-url");  // get the url of the `load_cities` view
+            const makeId = $(this).val();  // get the selected country ID from the HTML input
+            $.ajax({    
+                                   // initialize an AJAX request
+                url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+                data: {
+                    'make_id': makeId       // add the country id to the GET parameters
+                },
+                success: function (data) {   // `data` is the return of the `load_cities` view function
+                    $("#id_model").html(data);  // replace the contents of the city input with the data that came from the server
+                    for (let i = 0; i < data.models.length; i++) {
+                        var option = $('<option/>');
+                        option.attr({ 'value': data.models[i].id }).text(data.models[i].name);
+                        $('#id_model').append(option);
+                    }
+                    /*
+                    let html_data = '<option value="">---------</option>';
+                    data.forEach(function (city) {
+                        html_data += `<option value="${city.id}">${city.name}</option>`
+                    });
+                    console.log(html_data);
+                    $("#id_city").html(html_data);
+                    */
+                }
+            });
+    
+        });
+    </script>
+    
+    </body>
+    </html>

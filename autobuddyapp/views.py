@@ -32,3 +32,15 @@ def load_models(request):
     models = list(Model.objects.filter(make__id = make_id).values())
     return JsonResponse({'models': models})
     # return JsonResponse(list(cities.values('id', 'name')), safe=False)
+
+def load_about(request):
+    return render(request, 'models/about_autobuddy.html')
+
+def load_autobuddy_estimator(request):
+    return render(request, 'models/autobuddy_estimator.html')
+
+def load_is_it_fair(request):
+    return render(request, 'models/is_it_fair.html')
+
+def load_make_a_report(request):
+    return render(request, 'models/make_report.html')

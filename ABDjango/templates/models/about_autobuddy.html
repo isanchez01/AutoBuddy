@@ -1,0 +1,166 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <link rel="stylesheet" href="{% static 'css/edits.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About AutoBuddy</title>
+
+</head>
+
+<body style="background-color: rgb(252, 20, 20);">
+    <div id = "about">
+        <h1 style="font-family: neuton; color: white; text-align: center;">About AutoBuddy</h1>
+    
+        <p style='font-family: neuton; color: white; line-height: 1.8; font-size: 20px; margin-top: 100px;'>
+           Thank you for checking out my project, AutoBuddy! My name is Israel Sanchez, and as a car guy, I love repairing my
+           cars. Something about getting your hands filthy with grease and hearing your car run like new after replacing that
+           defective part makes me feel satisfied and accomplished. This feeling of satisfaction is further amplified by the gigantic
+           savings that come with fixing vehicles at home! The $350 it takes to have a mechanic replace the valve cover gasket in your
+           2013 Ford Escape will merely cost $23.79 and your time. Plus, you'll get rid of that stinky smell of burning oil.
+        </p>
+
+        <p style='font-family: neuton; color: white; line-height: 1.8; font-size: 20px; margin-top: 100px;'>
+            However, auto repair is a complex task to take on, especially today's cars which utilize lots of electonic parts.
+            Not many people know how to repair their car, and learning usually entails a few repairs being botched, which can 
+            be catastrophic to the vehicle. Because of this, many people choose to pay an expert to fix their car. The auto repair
+            industy is notorious for being an oasis of dishonest mechanics who charge customers excessively for repairs that they
+            often comlplete poorly, if they complete them at all. The internet is full of stories of unfortunate indivudals who 
+            fell victim to a malicious mechanic. AutoBuddy hopes to curtail this problem by providing users with the ability to
+            look up the average price for a repair or set of repairs for their specific car. The idea behind retrieving the 
+            average price for repairs is to provide users with a reference point. They can compare the price that they received
+            to this reference point, and in turn, see if they're being charged reasonably. 
+        </p>
+
+    </div>
+    
+    <div id = "AboutAutoBuddy" style="font-family: neuton; margin-top: 250px; margin-left: 40px">
+        <h2 style="color: white; text-align: left;">
+            About AutoBuddy
+        </h2>
+        <p style = 'color: white; font-size: 20px; text-align:left; margin-top: 0px;'> 
+            The idea for AutoBuddy came to me after experimenting with a few auto repair estimators. <br>
+            As I used these estimators, I became inspired to create my own, however, I would add my own spins on it. <br>
+            Instead of pulling numbers from external sources, AutoBuddy's estimates are calculated from reports that are <br> 
+            submitted by actual users.
+        </p>
+        <p style = 'color: white; font-size: 20px; text-align:left; margin-top: 50px;'>
+            AutoBuddy also offers users a tool to check if a quote they got from the shop is reasonably priced. <br>
+            The Is It Fair tool works the same way as the AutoBuddy Estimator, except that the tool presents the <br>
+            user with a graphical colored spectrum that'll help users with determining the fairness of their quote. <br>
+        </p>
+        <p style='color: white; font-size: 20px; text-align:left; margin-top: 50px;'> 
+            The goal that AutoBuddy strives to acheive is to help users save money on auto repair by giving them the tools<br>
+            to avoid being taken advantage of from high auto repair prices. 
+        </p>
+    </div>
+    
+    <div id="AutoBuddyEstimator" style = "font-family: neuton; margin-top: 250px; margin-left: 40px">
+        <h2 style="color: white; text-align: left;">
+            AutoBuddy Estimator
+        </h2>
+        <p style='color: white; font-size: 20px; text-align:left; margin-top: 50px;'>
+            As mentioned in the About AutoBuddy section, the AutoBuddy Estimator takes the car and repair info submitted <br>
+            by the user, and sends it to an API that will calculate the estimate for the part(s) sent by the user. <br>
+            AutoBuddy uses a Postgreql database to store information on cars, users, and reports, which will later be used <br>
+            to calculate the estimate.
+        </p>
+        <p style = "color: white; font-size: 20px; text-align:left; margin-top: 50px;">
+            The user will be asked to select his/her vehicle's year, make, and model from three <br> 
+            dropdown buttons. Upon clicking the "submit" button, he/she will be presented with the estimated total cost of <br>
+            repair. If multiple repairs were selected, then the estimated costs of each repair will also be displayed. <br> 
+        </p>
+    </div>
+    
+    <div id="IsItFair" style = "font-family: neuton; margin-top: 250px; margin-left: 40px">
+        <h2 style = "color: white; text-align: left;">
+            Is It Fair
+        </h2>
+        <p style = "color: white; font-size: 20px; text-align:left; margin-top: 50px;">
+            The Is It Fair tool acts kind of like a shield to users in that it can protect them from overpriced auto repairs. <br>
+            Its primary purpose is to compare the user-submitted costs for specific repairs to their averages calculated by the API. <br>
+            The tool would then display a colored spectrum that will notify the user whether or not they're paying too much. <br>
+        </p>                 
+    
+        <p style = "color: white; font-size: 20px; text-align:left; margin-top: 50px;">
+            The Is It Fair spectrum will display one of four colors to the user, depending on how cheap or expensive the quote is <br>
+            relative to the calculated average. The four colors are: Dark Green, Green, Yellow, and Red. 
+        </p>
+        <p style="color: white; font-size: 20px; text-align:left; margin-top: 50px;">
+            Dark Green indicates that the user's quote for their submitted repairs is significantly below the calculated average, and that the user is getting <br>
+            one heck of a deal! 
+        </p>
+        <p style="color: white; font-size: 20px; text-align:left; margin-top: 50px;">
+            Green indicates that the user's quote is either slightly below or at the calculated average, and is either getting <br>
+            somewhat of a deal, or is at least getting charged the average price.  
+        </p>
+        <p style = "color: white; font-size: 20px; text-align:left; margin-top: 50px;">
+            Yellow indicates that the user's quote is slightly above the calculated average price. The user is kind of paying <br>
+            more than they should, but they are certainly not getting their head knocked off.
+        </p>
+        <p style = "color: white; font-size: 20px; text-align:left; margin-top: 50px;">
+            Red indicates that the user's quote is significantly above the calculated average and that he/she should probably <br>
+            find a different mechanic.
+        </p>
+    </div>
+    
+    <div id="MakeAReport" style = "font-family: neuton; margin-top: 250px; margin-left: 40px;">
+        <h2 style = "color: white; text-align: left;">
+            Making A Report
+        </h2>
+        <p style = "color: white; font-size: 20px; text-align:left; margin-top: 50px;">
+            If you've recently taken your car to your local mechanic and are felling particularly helpful, feel free to send <br>
+            a report to AutoBuddy!
+        <p style = "color: white; font-size: 20px; text-align:left; margin-top: 50px;">
+            To send AutoBuddy a report of your auto repair costs, click on the "Make a Report!" button. <br> 
+            You will be prompted to enter in your first and last name, along with your vehicle's information <br>
+            just like you would in the AutoBuddy Estimator and Is It Fair? tools.
+        </p>
+    </div>
+    <div id = 'header&form' style="text-align: center;">
+        <h2>Car Form</h2>
+        <form method="post" id="modelForm" data-models-url="{% url 'ajax_load_models' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $("#id_make").change(function () {
+            const url = $("#modelForm").attr("data-models-url");  // get the url of the `load_cities` view
+            const makeId = $(this).val();  // get the selected country ID from the HTML input
+            $.ajax({    
+                                   // initialize an AJAX request
+                url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+                data: {
+                    'make_id': makeId       // add the country id to the GET parameters
+                },
+                success: function (data) {   // `data` is the return of the `load_cities` view function
+                    $("#id_model").html(data);  // replace the contents of the city input with the data that came from the server
+                    for (let i = 0; i < data.models.length; i++) {
+                        var option = $('<option/>');
+                        option.attr({ 'value': data.models[i].id }).text(data.models[i].name);
+                        $('#id_model').append(option);
+                    }
+                    /*
+                    let html_data = '<option value="">---------</option>';
+                    data.forEach(function (city) {
+                        html_data += `<option value="${city.id}">${city.name}</option>`
+                    });
+                    console.log(html_data);
+                    $("#id_city").html(html_data);
+                    */
+                }
+            });
+    
+        });
+    </script>
+    
+    </body>
+    </html>

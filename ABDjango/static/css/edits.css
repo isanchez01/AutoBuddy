@@ -1,0 +1,29 @@
+.toolbarButton {
+    background-color: rgb(252, 20, 20); 
+    color: white; 
+    padding: 20px 20px; 
+    font-size: 21px; 
+    border: none; 
+    display: inline; 
+    position: relative;
+}
+
+.toolbarButton:hover {
+    background-color: rgb(190, 0, 0);
+}
+
+.top_nav_fixed {
+    position: fixed !important;
+    top: 0px !important;
+    left: -2px !important;
+    right: -1px !important;
+    border-top: 0px !important;
+    z-index: 49 !important;
+ }
+
+@font-face {
+    font-family: "neuton";
+    src: url(neuton/Neuton-Regular.ttf);
+    font-style: normal;
+}
+
