@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="{% static 'base.css' %}" type="text/css" media="screen">
+            <title>
+                AutoBuddy: Your Automotive Friend
+            </title>
+            <style>
+                @font-face {
+                    font-family: 'Subway';
+                    src: url("{% static 'fonts/Subway-Black.ttf' %}");
+                }
+            </style>
+        </head>
+        <body>
+            <div id="toolbar">
+                <div id="firstToolbarHalf">
+                    <input type="button" id="aboutAutoBuddy" class="toolbarButton" value="About AutoBuddy">
+                    <input type="button" id="CostFinder" class="toolbarButton" value="Cost Finder">
+                    <input type="button" id="isItFair" class="toolbarButton" value="Is It Fair? Tool">
+                </div>
+                <div id="toolbarLogoDiv">
+                    <img id="toolbarLogo" src="{% static 'images/AutoBuddyLogo.png'%}">
+                </div>
+                <div id="secondToolbarHalf">
+                    <input id="resume" class="toolbarButton" type="button" value="Resume">
+                    <input id="linkedin" class="toolbarButton" type="button" value="LinkedIn">
+                    <input id="github" class="toolbarButton" type="button" value="GitHub">
+                    <input id="aboutMe" class="toolbarButton" type="button" value="About Me">
+                </div>  
+            </div>
+            <div id="mainLogoDiv">
+                <img id="mainLogo" src="{% static 'images/AutoBuddyLogo.png'%}">
+            </div>
+            
+            <div id="aboutAutoBuddySection">
+                <h1 id="aboutAutoBuddySectionHeader">Say hello to your Automotive Friend!</h1>
+                <p class="aboutAutoBuddySectionParagraph">
+                    Welcome to AutoBuddy, the tool that'll help you save substantial amounts of cash from those expensive car repair bills that
+                    seem to get more expensive each year. Many of us have been there at the shop, anxiously watching the mechanic work on your
+                    car and anticipating a bill worth thousands. Many can also relate to the anguish felt after hearing a list of repairs that
+                    wound the wallet. If you consider yourself amongst this crowd of people and are tired of waiting anxiously for the auto repair bill,
+                    allow AutoBuddy to help! AutoBuddy allows users to view estimated costs of repairs for their specific vehicle. Using the Cost Finder tool,
+                    all you have to do is type in your car's information, such as its year, make, and model, along with the repairs you'd like to perform, and AutoBuddy
+                    will instantly give you the estimated cost so you could rest easy knowing roughly how much you should be paying.
+                </p>
+                <p class="aboutAutoBuddySectionParagraph">
+                    Want to know if the mechanic is giving you a fair price? AutoBuddy has you covered for that too! The Is It Fair? tool calculates the
+                    average price paid for a specific set of repairs for your vehicle. What's interesting is that the average price that you get from this tool
+                    is calculated using repair costs that are submitted by real users, meaning that the average that you get is the average price of your repairs that were paid for by real people!
+                    In turn, you can take a look at this average and compare it with the price quoted by your mechanic. If its less than average, you likely got lucky. If its more, well, you might want to look for a different mechanic.
+                </p>
+            </div>
+            
+            <div id="costFinderSection">
+                <h1 id="costFinderSectionHeader">Cost Finder Estimator Tool</h1>
+                <p class="costFinderSectionParagraph">
+                    You've reached the Cost Finder tool, where you can get an estimated cost the a set of repairs you plan to do for your car. Using the Cost Finder tool is very simple,
+                    all you have to do is provide AutoBuddy with three details about your car, its year, its make, and its model, and the set of repairs that you plan to do.
+                    Once you typed in that information, simply click the submit button, and AutoBuddy will pull up the price you'll likely pay faster than you can say "Hakuna Matata".
+                </p>
+                <div id="costFinderForm">
+                    <div id="carYearDiv">
+                        <label class="label" id="carYear">Year:</label>
+                        <input type="text" id="carYearInput" size="14" name="carYearInput">
+                    </div>
+                    <div id="carMakeDiv">
+                        <label class="label" id="carMake">Make:</label>
+                        <input type="text" id="carMakeInput" size="14" name="carMakeInput">
+                    </div>
+                    <div id="carModelDiv">
+                        <label class="label" id="carModel">Model:</label>
+                        <input type="text" id="carModelInput" size="14" name="carModelInput">
+                    </div>
+                    <div id="repairDiv">
+                        <label class="label" id="repair">Repair:</label>
+                        <input type="text" id="repairInput" size="14" name="repair">
+                    </div>
+                </div>
+            </div>
+            <div id="isItFairSection">
+                <h1 id="isItFairSectionHeader">Is It Fair?</h1>
+                <p class="isItFairSectionParagraph">
+                    As mentioned before, the Is It Fair? tool allows you to check if the price you were given from your mechanic is fair and reasonable.
+                    Like Cost Finder, the Is It Fair? tool takes in your vehicle's year, make, and model, along with the repairs and the price you were quoted for them.
+                    This tool then compares your price with the average price of the repairs calculated by AutoBuddy, and determines whether your price is fair based on whether it is cheaper or more expensive.
+                </p>
+                <p class="isItFairSectionParagraph">
+                    The Is It Fair? tool also gauges how much more expensive or cheaper your price is compared to the calculated average.
+                    After you click the submit button, the tool will generate a statement that will tell you how much you over/underpaid and will do so in one of four colors.
+                </p>
+                <p class="isItFairSectionParagraph" style="color:darkgreen">
+                    If your price is significantly below the calculated average, the difference will be highlighted in dark green, signifying that you are one lucky individual.
+                </p>
+                <p class="isItFairSectionParagraph" style="color:green">
+                    If your price is below the calculated average, the difference will be highlighted in green, signifying that you found a good deal and (hopefully) a good mechanic.
+                </p>
+                <p class="isItFairSectionParagraph" style="color:yellow">
+                    If your price is either at the calculated average or slightly above it, the difference will be highlighted in yellow, which is certainly not the end of the world, but doesn't call for a celebratory jump.
+                </p>
+                <p class="isItFairSectionParagraph" style="color:maroon">
+                    If your price is significantly above the calculated average, the difference will be highlighted in red, which means that you're probably getting overcharged and might want to shop around for another mechanic.
+                </p>
+                <div id="isItFairForm">
+                    <div id="carYearFairDiv">
+                        <label class="label" id="carYearFair">Year:</label>
+                        <input type="text" id="carYearFairInput" size="14" name="carYearFairInput">
+                    </div>
+                    <div id="carMakeFairDiv">
+                        <label class="label" id="carMakeFair">Make:</label>
+                        <input type="text" id="carMakeFairInput" size="14" name="carMakeFairInput">
+                    </div>
+                    <div id="carModelFairDiv">
+                        <label class="label" id="carModelFair">Model:</label>
+                        <input type="text" id="carModelFairInput" size="14" name="carModelFairInput">
+                    </div>
+                    <div id="repairFairDiv">
+                        <label class="label" id="repairFair">Repair:</label>
+                        <input type="text" id="repairFairInput" size="14" name="repairFairInput">
+                    </div>
+                    <div id="quoteDiv">
+                        <label class="label" id="quote">Quote:</label>
+                        <input type="text" id="quoteInput" size="14" name="quoteInput">
+                    </div>
+                </div>
+            </div>
+
+        </body>
+    </html>

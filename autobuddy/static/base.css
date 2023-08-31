@@ -1,0 +1,174 @@
+body {
+    background-color: rgb(223, 32, 16);
+}
+.toolbarButton {
+    background:none;
+    font-size:17px;
+    outline:none;
+    border:none;
+    color:rgb(245, 231, 230);
+    font-family: Subway;
+    padding:20px;
+}
+
+#toolbar {
+    display: flex;
+}
+
+#firstToolbarHalf {
+    display:flex;
+    position: relative;
+}
+
+#toolbarLogo {
+    width:250px;
+    height:auto;
+    position: relative;
+    left:70px;
+}
+
+#secondToolbarHalf {
+    display:flex;
+    position: relative;
+    left:160px;
+}
+
+#mainLogo {
+    width:500px;
+    height:auto;
+    margin-top:200px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+#aboutAutoBuddySection {
+    position:relative;
+    top:200px;
+}
+
+#aboutAutoBuddySectionHeader {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    text-align: center;
+    position:relative;
+    color:rgb(245, 231, 230);
+    font-family: Subway;
+}
+
+.aboutAutoBuddySectionParagraph {
+    color:rgb(245, 231, 230);
+    font-family: Subway;
+    line-height: 1.5;
+}
+
+#costFinderSection {
+    position:relative;
+    top:400px;
+}
+
+#costFinderSectionHeader {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    text-align: center;
+    position:relative;
+    color:rgb(245, 231, 230);
+    font-family: Subway;
+}
+
+.costFinderSectionParagraph {
+    color:rgb(245, 231, 230);
+    font-family: Subway;
+    line-height: 1.5;
+}
+
+#isItFairSection {
+    position:relative;
+    top:600px;
+}
+
+#isItFairSectionHeader {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    text-align: center;
+    position:relative;
+    color:rgb(245, 231, 230);
+    font-family: Subway;
+}
+
+.isItFairSectionParagraph {
+    color:rgb(245, 231, 230);
+    font-family: Subway;
+    line-height: 1.7;
+}
+
+#costFinderForm {
+    display:flex;
+    position:relative;
+    top:100px;
+}
+
+#isItFairForm {
+    display:flex;
+    position:relative;
+    top:50px;
+}
+.label {
+    font-family: Subway;
+    color:rgb(245, 231, 230);
+    font-size:24px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+input[type="text"] {
+    height:23px;
+}
+
+#carYearDiv{
+    position:relative;
+    left:75px;
+}
+
+#carMakeDiv {
+    position:relative;
+    left:175px;
+}
+
+#carModelDiv {
+    position:relative;
+    left:275px;
+}
+
+#repairDiv {
+    position:relative;
+    left:375px;
+}
+
+#carYearFairDiv{
+    position:relative;
+    left:10px;
+}
+
+#carMakeFairDiv {
+    position:relative;
+    left:50px;
+}
+
+#carModelFairDiv {
+    position:relative;
+    left:90px;
+}
+
+#repairFairDiv {
+    position:relative;
+    left:140px;
+}
+
+#quoteDiv {
+    position:relative;
+    left:190px;
+}
