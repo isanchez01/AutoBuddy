@@ -4,6 +4,7 @@
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="{% static 'base.css' %}" type="text/css" media="screen">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <title>
                 AutoBuddy: Your Automotive Friend
             </title>
@@ -13,116 +14,383 @@
                     src: url("{% static 'fonts/Subway-Black.ttf' %}");
                 }
             </style>
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("toolbarLinks");
+                    if (x.style.display === "inline-grid") {
+                        x.style.display = "none";
+                    } else {
+                        x.style.display = "inline-grid";
+                        x.style.position = "relative";
+                        x.style.top = "84px";
+                        x.style.backgroundColor="#123491";
+                        x.style.width="108%";
+                        x.style.marginLeft="-15px";
+                    }
+                }
+            </script>
         </head>
         <body>
             <div id="toolbar">
-                <div id="firstToolbarHalf">
-                    <input type="button" id="aboutAutoBuddy" class="toolbarButton" value="About AutoBuddy">
-                    <input type="button" id="CostFinder" class="toolbarButton" value="Cost Finder">
-                    <input type="button" id="isItFair" class="toolbarButton" value="Is It Fair? Tool">
+                <img id="toolbarLogo" src="{% static 'images/AutoBuddyLogo.jpg'%}">
+                <h2 id="toolbarLogoText">AutoBuddy</h2>
+            </div>
+            <div class="burger">
+                <div id="toolbarLinks">
+                    <a id="aboutLink" href="#aboutSloganDiv">About AutoBuddy</a>
+                    <a id="costFinderLink" href="#costFinderSloganDiv">Cost Finder</a>
+                    <a id="isItFairLink" href="#isItFairSloganDiv">Is It Fair?</a>
+                    <a id="addToAutoBuddyLink" href="#addToAutoBuddySloganDiv">Add To AutoBuddy</a>
+                 </div>
+                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                     <i class="fa fa-bars"></i>
+                 </a>
+            </div>
+            <div id="welcomeImageDiv">
+                <div class="sloganDiv">
+
                 </div>
-                <div id="toolbarLogoDiv">
-                    <img id="toolbarLogo" src="{% static 'images/AutoBuddyLogo.png'%}">
+                <img id="welcomeImage" src="{% static 'images/MechanicHappyCustomer.jpg'%}">
+                <h2 id="welcomeImageText">Say hello to the Automotive Friend That'll save you big at the shop!</h2>
+                <div id="aboutSloganDiv" class="sloganDiv" style="bottom:8px;">
+
                 </div>
-                <div id="secondToolbarHalf">
-                    <input id="resume" class="toolbarButton" type="button" value="Resume">
-                    <input id="linkedin" class="toolbarButton" type="button" value="LinkedIn">
-                    <input id="github" class="toolbarButton" type="button" value="GitHub">
-                    <input id="aboutMe" class="toolbarButton" type="button" value="About Me">
-                </div>  
             </div>
-            <div id="mainLogoDiv">
-                <img id="mainLogo" src="{% static 'images/AutoBuddyLogo.png'%}">
+            <div id="aboutWelcomeWrapper">
+                <div id="welcomeBelowDiv">
+                    <h2 id="welcomeBelowText">Welcome to AutoBuddy</h2>
+                </div>
+                <div id="aboutAutoBuddySection">
+                    <p class="aboutAutoBuddySectionParagraph">
+                        Want to know if the mechanic is giving you a fair price? AutoBuddy has you covered for that too! Through the use of two tools, the Cost Finder and Is It Fair? tool, you can 
+                        make sure that you get the help that you need to save yourself from swindlers at the shop and net yourself some extra cash from savings.
+                    </p>
+                    <p class="aboutAutoBuddySectionParagraph">
+                        If you would like to learn more about these tools, scroll down and read on the sections below for each tool.
+                    </p>
+                </div>
             </div>
-            
-            <div id="aboutAutoBuddySection">
-                <h1 id="aboutAutoBuddySectionHeader">Say hello to your Automotive Friend!</h1>
-                <p class="aboutAutoBuddySectionParagraph">
-                    Welcome to AutoBuddy, the tool that'll help you save substantial amounts of cash from those expensive car repair bills that
-                    seem to get more expensive each year. Many of us have been there at the shop, anxiously watching the mechanic work on your
-                    car and anticipating a bill worth thousands. Many can also relate to the anguish felt after hearing a list of repairs that
-                    wound the wallet. If you consider yourself amongst this crowd of people and are tired of waiting anxiously for the auto repair bill,
-                    allow AutoBuddy to help! AutoBuddy allows users to view estimated costs of repairs for their specific vehicle. Using the Cost Finder tool,
-                    all you have to do is type in your car's information, such as its year, make, and model, along with the repairs you'd like to perform, and AutoBuddy
-                    will instantly give you the estimated cost so you could rest easy knowing roughly how much you should be paying.
-                </p>
-                <p class="aboutAutoBuddySectionParagraph">
-                    Want to know if the mechanic is giving you a fair price? AutoBuddy has you covered for that too! The Is It Fair? tool calculates the
-                    average price paid for a specific set of repairs for your vehicle. What's interesting is that the average price that you get from this tool
-                    is calculated using repair costs that are submitted by real users, meaning that the average that you get is the average price of your repairs that were paid for by real people!
-                    In turn, you can take a look at this average and compare it with the price quoted by your mechanic. If its less than average, you likely got lucky. If its more, well, you might want to look for a different mechanic.
+            <div id="costFinderPreSection">
+                <h1 id="costFinderPreSectionHeader">Cost Finder Auto Repair Estimator</h1>
+                <p id="costFinderPreSectionParagraph">
+                    Ever heard a strange noise coming from your car and wondered how much it would
+                    cost to have the mechanic take a look and fix it? Now you can with AutoBuddy's Cost Finder tool!
+                    Cost Finder works by taking the information about your car and repair, and adding up the total amount 
+                    paid for by users with the same car and repair(s). Afterwards, this sum is then divided by the number of 
+                    the reports submitted of this car and repair(s), just like finding the average. This average is then shown to
+                    you, giving you the average price of your repairs paid for by real people.
                 </p>
             </div>
-            
+
+            <div id="isItFairPreSection">
+                <h1 id="isItFairPreSectionHeader">Is it Fair? Quote Comparison Tool</h1>
+                <div id="isItFairPreSectionParagraphDiv">
+                    <p id="isItFairPreSectionParagraph">
+                        We've all heard of the stories of people coming into the shop, being told of repairs that need to be done, 
+                        forking over ludicrous amounts of money, and find out that the repairs not only weren't need, but were way overcharged.
+                        While AutoBuddy's Is It Fair? tool won't help you avoid falling victim to unnecessary repairs, it can help you avoid
+                        paying too much at the shop.
+                    </p>
+                    <p id="isItFairPreSectionParagraph">
+                        The Is It Fair? tool takes in your vehicle's information, such as its year, make, and model, along with the repairs you did and how much it cost.
+                        AutoBuddy will then compare the price you paid to the average price paid for by users who paid for the same repairs on the same vehicle. Based on how far below
+                        or above your price is compared to the average price calculated by AutoBuddy, you will be notified whether you are getting swindled or are catching a lucky break at the shop.
+                    </p>
+                </div>
+            </div>
             <div id="costFinderSection">
-                <h1 id="costFinderSectionHeader">Cost Finder Estimator Tool</h1>
+                <div id="costFinderImageBannerDiv">
+                    <div id="costFinderSloganDiv" class="sloganDiv">
+                    
+                    </div>
+                    <img id="costFinderImage" src="{% static 'images/estimate.jpg' %}">
+                    <h1 id="costFinderSectionHeader">Cost Finder Estimator Tool</h1>
+                    <div class="sloganDiv" style="bottom:6px;">
+                    
+                    </div>
+                </div>
                 <p class="costFinderSectionParagraph">
                     You've reached the Cost Finder tool, where you can get an estimated cost the a set of repairs you plan to do for your car. Using the Cost Finder tool is very simple,
                     all you have to do is provide AutoBuddy with three details about your car, its year, its make, and its model, and the set of repairs that you plan to do.
                     Once you typed in that information, simply click the submit button, and AutoBuddy will pull up the price you'll likely pay faster than you can say "Hakuna Matata".
                 </p>
-                <div id="costFinderForm">
-                    <div id="carYearDiv">
-                        <label class="label" id="carYear">Year:</label>
-                        <input type="text" id="carYearInput" size="14" name="carYearInput">
-                    </div>
-                    <div id="carMakeDiv">
-                        <label class="label" id="carMake">Make:</label>
-                        <input type="text" id="carMakeInput" size="14" name="carMakeInput">
-                    </div>
-                    <div id="carModelDiv">
-                        <label class="label" id="carModel">Model:</label>
-                        <input type="text" id="carModelInput" size="14" name="carModelInput">
-                    </div>
-                    <div id="repairDiv">
-                        <label class="label" id="repair">Repair:</label>
-                        <input type="text" id="repairInput" size="14" name="repair">
+                <div id="costFinderFormWrapper">
+                    <h2 id="costFinderFormHeader">Enter your car information here</h2>
+                    <div id="costFinderFormSubWrapper">
+                        <form id="costFinderForm">
+                            <div id="carYearDiv">
+                                <label class="label" for="carYearsCostFinder" id="carYearLabel">Year:</label>
+                                <select id="carYearsCostFinder" name="carYearsCostFinder">
+                                    <option value="1980">1980</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                            </div>
+                            <div id="carMakeDiv">
+                                <label class="label" id="carMakeLabel">Make:</label>
+                                <input type="text" id="carMakeInput" size="14" name="carMakeInput">
+                            </div>
+                            <div id="carModelDiv">
+                                <label class="label" id="carModel">Model:</label>
+                                <input type="text" id="carModelInput" size="14" name="carModelInput">
+                            </div>
+                            <div id="repairDiv">
+                                <label class="label" id="repair">Repair:</label>
+                                <input type="text" id="repairInput" size="14" name="repair">
+                            </div>
+                            <div id="costFinderSubmitDiv">
+                                <button type="submit" id="costFinderSubmitButton" form="costFinderForm">Find Your Cost!</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <div id="isItFairSection">
-                <h1 id="isItFairSectionHeader">Is It Fair?</h1>
+                <div id="isItFairImageDiv">
+                    <div id="isItFairSloganDiv" class="sloganDiv">
+
+                    </div>
+                    <img id="isItFairImage" src="{% static 'images/overpaid.jpg' %}">
+                    <h1 id="isItFairSectionHeader">Is It Fair? Quote Comparison Tool</h1>
+                    <div style="bottom:6px" class="sloganDiv">
+
+                    </div>
+                </div>
                 <p class="isItFairSectionParagraph">
                     As mentioned before, the Is It Fair? tool allows you to check if the price you were given from your mechanic is fair and reasonable.
                     Like Cost Finder, the Is It Fair? tool takes in your vehicle's year, make, and model, along with the repairs and the price you were quoted for them.
                     This tool then compares your price with the average price of the repairs calculated by AutoBuddy, and determines whether your price is fair based on whether it is cheaper or more expensive.
-                </p>
-                <p class="isItFairSectionParagraph">
-                    The Is It Fair? tool also gauges how much more expensive or cheaper your price is compared to the calculated average.
-                    After you click the submit button, the tool will generate a statement that will tell you how much you over/underpaid and will do so in one of four colors.
-                </p>
                 <p class="isItFairSectionParagraph" style="color:darkgreen">
                     If your price is significantly below the calculated average, the difference will be highlighted in dark green, signifying that you are one lucky individual.
                 </p>
                 <p class="isItFairSectionParagraph" style="color:green">
                     If your price is below the calculated average, the difference will be highlighted in green, signifying that you found a good deal and (hopefully) a good mechanic.
                 </p>
-                <p class="isItFairSectionParagraph" style="color:yellow">
+                <p class="isItFairSectionParagraph" style="color:#a9b019">
                     If your price is either at the calculated average or slightly above it, the difference will be highlighted in yellow, which is certainly not the end of the world, but doesn't call for a celebratory jump.
                 </p>
                 <p class="isItFairSectionParagraph" style="color:maroon">
                     If your price is significantly above the calculated average, the difference will be highlighted in red, which means that you're probably getting overcharged and might want to shop around for another mechanic.
                 </p>
-                <div id="isItFairForm">
-                    <div id="carYearFairDiv">
-                        <label class="label" id="carYearFair">Year:</label>
-                        <input type="text" id="carYearFairInput" size="14" name="carYearFairInput">
+                <div id="isItFairFormWrapper">
+                    <h2 id="isItFairFormHeader">Enter your car repair and quote information here</h2>
+                    <div id="isItFairFormSubWrapper">
+                        <form id="isItFairForm">
+                            <div id="carYearFairDiv">
+                                <label class="label" for="carYearsFairTool" id="carYearFair">Year:</label>
+                                <select id="carYearsFairTool" name="carYearsFairTool">
+                                    <option value="1980">1980</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                            </div>
+                            <div id="carMakeFairDiv">
+                                <label class="label" id="carMakeFair">Make:</label>
+                                <input type="text" class="fairTextInput" id="carMakeFairInput" size="14" name="carMakeFairInput">
+                            </div>
+                            <div id="carModelFairDiv">
+                                <label class="label" id="carModelFair">Model:</label>
+                                <input type="text" class="fairTextInput" id="carModelFairInput" size="14" name="carModelFairInput">
+                            </div>
+                            <div id="repairFairDiv">
+                                <label class="label" id="repairFair">Repair:</label>
+                                <input type="text" class="fairTextInput" id="repairFairInput" size="14" name="repairFairInput">
+                            </div>
+                            <div id="quoteDiv">
+                                <label class="label" id="quote">Quote:</label>
+                                <input type="text" class="fairTextInput" id="quoteInput" size="14" name="quoteInput">
+                            </div>
+                            <div id="isItFairSubmitDiv">
+                                <button type="submit" id="isItFairSubmitButton" form="isItFairForm">Check Your Quote!</button>
+                            </div>
+                        </form>
                     </div>
-                    <div id="carMakeFairDiv">
-                        <label class="label" id="carMakeFair">Make:</label>
-                        <input type="text" id="carMakeFairInput" size="14" name="carMakeFairInput">
+                </div>
+            </div>
+
+            <div id="addToAutoBuddy">
+                <div id="addToAutoBuddyImageDiv">
+                    <div id="addToAutoBuddySloganDiv" class="sloganDiv">
+
                     </div>
-                    <div id="carModelFairDiv">
-                        <label class="label" id="carModelFair">Model:</label>
-                        <input type="text" id="carModelFairInput" size="14" name="carModelFairInput">
+                    <img id="addToAutoBuddyImage" src="{% static 'images/helpful.jpg' %}">
+                    <h1 id="addToAutoBuddyHeader">Contribute to AutoBuddy!</h1>
+                    <div style="bottom:6px;" class="sloganDiv">
+                        
                     </div>
-                    <div id="repairFairDiv">
-                        <label class="label" id="repairFair">Repair:</label>
-                        <input type="text" id="repairFairInput" size="14" name="repairFairInput">
-                    </div>
-                    <div id="quoteDiv">
-                        <label class="label" id="quote">Quote:</label>
-                        <input type="text" id="quoteInput" size="14" name="quoteInput">
+                </div>
+                <p class="addToAutoBuddyParagraph">
+                    AutoBuddy is powered by user-submitted reports of auto repair costs. These 
+                    reports are made by real people who have had repairs done on their car by a legitimate auto repair shop.
+                    The reason for this design is to give the estimates and comparisons as accurate as possible, and having the costs
+                    directly taken from the users would contribute greatly towards such accuracy. 
+                </p>
+                
+                <p class="addToAutoBuddyParagraph">
+                    As such, if you've recently taken your vehicle to get serviced at an auto repair shop and are feeling helpful,
+                    AutoBuddy would certainly appreciate your time to fill out the form below and report your costs. Any and all contributions are
+                    extremely useful to the application and will not go unappreciated. Thank you for your help!
+                </p>
+                <div id="addToAutoBuddyFormWrapper">
+                    <h2 id="addToAutoBuddyFormHeader">
+                        Add Your Vehicle and Repair Information here
+                    </h2>
+                    <div id="addToAutoBuddyFormSubWrapper">
+                        <form id="addToAutoBuddyForm">
+                            <div id="carYearAddDiv">
+                                <label class="label" for="carYearsAddTool" id="carYearAdd">Year:</label>
+                                <select id="carYearsAddTool" name="carYearsAddTool">
+                                    <option value="1980">1980</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                            </div>
+                            <div id="carMakeAddDiv">
+                                <label class="label" id="carMakeAdd">Make:</label>
+                                <input type="text" class="addTextInput" id="carMakeAddInput" size="14" name="carMakeAddInput">
+                            </div>
+                            <div id="carModelAddDiv">
+                                <label class="label" id="carModelAdd">Model:</label>
+                                <input type="text" class="addTextInput" id="carModelAddInput" size="14" name="carModelAddInput">
+                            </div>
+                            <div id="repairAddDiv">
+                                <label class="label" id="repairAdd">Repair:</label>
+                                <input type="text" class="addTextInput" id="repairAddInput" size="14" name="repairAddInput">
+                            </div>
+                            <div id="priceDiv">
+                                <label class="label" id="price">Total Paid:</label>
+                                <input type="text" class="addTextInput" id="priceInput" size="14" name="priceInput">
+                            </div>
+                            <div id="addToAutoBuddySubmitDiv">
+                                <button id="addToAutoBuddySubmitButton" type="sumbit" form="addToAutoBuddyForm">Submit Your Report!</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
