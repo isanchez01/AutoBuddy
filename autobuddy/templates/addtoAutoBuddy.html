@@ -28,10 +28,6 @@
                         x.style.marginLeft="-15px";
                     }
                 }
-                function displayCostFinder() {
-                    var x = document.getElementById("costFinderChecker");
-                    console.log(x.innerHTML);
-                }
             </script>
         </head>
         <body>
@@ -185,7 +181,7 @@
                                 <input type="text" id="repairInput" size="14" name="repair">
                             </div>
                             <div id="costFinderSubmitDiv">
-                                <button type="submit">Find Your Cost!</button>
+                                <button type="submit" onclick="displayCostFinder()" id="costFinderSubmitButton" form="costFinderForm">Find Your Cost!</button>
                             </div>
                         </form>
                     </div>
@@ -397,6 +393,9 @@
                             </div>
                         </form>
                     </div>
+                </div>
+                <div id="addToAutoBuddyCheckerDiv">
+                    <h2 id="addToAutoBuddyChecker">Thank you for contributing to AutoBuddy!</h2>
                 </div>
             </div>
 

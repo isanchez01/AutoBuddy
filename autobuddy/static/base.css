@@ -473,6 +473,50 @@ input[type="text"] {
     position:relative;
     left:190px;
 }
+
+#costFinderCheckerDiv {
+    background-color: #2596be;
+    height: 200px;
+}
+#costFinderChecker {
+    text-align: center;
+    top: 29%;
+    position: relative;
+    font-family: Subway;
+    color: #fff;
+}
+#isItFairCheckerDiv {
+    background-color: #2596be;
+    font-family: Subway;
+    text-align: center;
+    color: #fff;
+}
+#veryGoodHeader {
+    display:none;
+}
+#goodHeader {
+    display:none;
+}
+#okayHeader {
+    display:none;
+}
+#badHeader {
+    display:none;
+}
+#isitfairdummy {
+    display:none;
+}
+#addToAutoBuddyCheckerDiv {
+    background-color: #2596be;
+    height: 200px;
+}
+#addToAutoBuddyChecker {
+    text-align: center;
+    color: #fff;
+    font-family: Subway;
+    position: relative;
+    top: 30%;
+}
 @media screen and (min-width:300px) and (max-width:636px) {
     .toolbarButton {
         font-size:13px;

@@ -20,4 +20,10 @@ from autobuddy import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index),
+    path("costfinder/", views.costfinder),
+
+    path("isitfair/", views.isitfair),
+    path("costfinder/isitfair", views.isitfair),
+
+    path("addtoautobuddy/", views.addtoautobuddy),
 ]

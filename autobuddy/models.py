@@ -8,7 +8,6 @@ class RepairCost(models.Model):
     
     repair_name = models.CharField(max_length = 70)
     repair_cost = models.IntegerField(blank= True)
-    repair_quote_cost = models.IntegerField(blank=True)
 
     def __str__(self) -> str:
         return self.car_year + " " + self.car_make + " " + self.car_model + " " + self.repair_name + " $" + str(self.repair_cost)

@@ -28,10 +28,6 @@
                         x.style.marginLeft="-15px";
                     }
                 }
-                function displayCostFinder() {
-                    var x = document.getElementById("costFinderChecker");
-                    console.log(x.innerHTML);
-                }
             </script>
         </head>
         <body>
@@ -295,6 +291,42 @@
 
                     </div>
                 </div>
+                <div id="isItFairCheckerDiv">
+                    <h2 id="isitfairChecker">The average price for your repairs is : {{average_cost2}}</h2>
+                    <br>
+                    <h2 id="veryGoodHeader">Compared to your quote of ${{your_price}}, you're paying well below average and have done pretty well for yourself!</h2>
+                    <h2 id="goodHeader">Compared to your quote of ${{your_price}}, the price you're paying is either slightly below or at average price. Pretty decent!</h2>
+                    <h2 id="okayHeader">Compared to your quote of ${{your_price}}, the average price is lower, but just by a little bit.</h2>
+                    <h2 id="badHeader">Compared to your quote of ${{your_price}}, you're paying quite a bit over the average price for your repairs. If possible, try to find a cheaper mechanic.</h2>
+                    <h1 id="isitfairdummy">{{deal_status}}</h1>
+                    <script>
+                        var ym = document.getElementById("isitfairdummy");
+                        var y = ym.innerHTML;
+
+                        var verygood = document.getElementById("veryGoodHeader");
+                        var good = document.getElementById("goodHeader");
+                        var okay = document.getElementById("okayHeader");
+                        var bad = document.getElementById("badHeader");
+                        console.log(y);
+                        if (y == "Very Good") {
+                            verygood.style.display = "block";
+                        }
+                        else if (y == "Good") {
+                            good.style.display = "block";
+                        }
+                        else if (y == "Okay") {
+                            okay.style.display = "block";
+                        }
+                        else if (y == "Bad") {
+                            bad.style.display = "block";
+                        }
+                        
+                        ym.style.display = "block";
+
+
+                    </script>
+                    
+                </div>
             </div>
 
             <div id="addToAutoBuddy">
@@ -325,7 +357,7 @@
                         Add Your Vehicle and Repair Information here
                     </h2>
                     <div id="addToAutoBuddyFormSubWrapper">
-                        <form id="addToAutoBuddyForm" action="addtoautobuddy">
+                        <form id="addToAutoBuddyForm">
                             <div id="carYearAddDiv">
                                 <label class="label" for="carYearsAddTool" id="carYearAdd">Year:</label>
                                 <select id="carYearsAddTool" name="carYearsAddTool">
