@@ -8,6 +8,7 @@ def index(request):
 
 def costfinder(request):
     carYear = request.GET.get('carYearsCostFinder')
+    print(carYear)
     carMake = request.GET.get('carMakeInput')
     carModel = request.GET.get('carModelInput')
     repair = request.GET.get('repair')
@@ -67,4 +68,4 @@ def addtoautobuddy(request):
     if isinstance(carYearAdd,str) and isinstance(carMakeAdd,str) and isinstance(carModelAdd,str) and isinstance(repairAdd,str) and price != '':
        repair_instance = RepairCost.objects.create(car_year=carYearAdd, car_make=carMakeAdd, car_model=carModelAdd, repair_name=repairAdd, repair_cost=price)
 
-    return render(request, "addToAutoBuddy.html")
+    return render(request, "addtoAutoBuddy.html")
