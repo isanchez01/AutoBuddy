@@ -490,18 +490,23 @@ input[type="text"] {
     font-family: Subway;
     text-align: center;
     color: #fff;
+    height:200px;
 }
 #veryGoodHeader {
     display:none;
+    color:#16370e;
 }
 #goodHeader {
     display:none;
+    color:#3b6c2f;
 }
 #okayHeader {
     display:none;
+    color:#f7da02;
 }
 #badHeader {
     display:none;
+    color:#F72002
 }
 #isitfairdummy {
     display:none;
