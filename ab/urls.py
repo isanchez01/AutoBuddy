@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index),
     path("costfinder/", views.costfinder),
-
+    path("isitfair/costfinder", views.costfinder),
     path("isitfair/", views.isitfair),
     path("costfinder/isitfair", views.isitfair),
 
